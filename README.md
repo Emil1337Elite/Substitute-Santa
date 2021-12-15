@@ -29,3 +29,11 @@ Fråga användaren om vad filen heter.
 Skriv sedan ut namnet på barnet (första raden).
 Skriv sedan "ÖNSKELISTA"
 Skriv sedan ut rad för rad vad önskelistan innehåller.
+
+TILL DIG SOM ÄR KLAR
+Lägg till en naughtylist.
+Antag att du har en lista redan som heter "kolbarn". Filen innehåller bara rader med namn och inget  annat.
+Gör liknande funktioner gällande detta.
+
+1. Läs från kolbarn.
+2. Lägg till på kolbarn. Innan du skriver till kolbarn så ska du få se barnen på listan först så du inte råkar lägga till samma sen tidigare.

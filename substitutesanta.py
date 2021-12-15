@@ -3,6 +3,8 @@
 #2021-12-14
 #Substitiute santa
 
+import os.path
+
 def list_c():
     n = input("What would you like your file to be called? ")
     cn = input("What is the child called? ")
@@ -11,13 +13,33 @@ def list_c():
     while True:
         a = input("Forget to add something? ").lower()
         if a == "yes" or a == "y":
-            input("What did you forget to add? \n")
+            i.append(input("What did you forget to add? \n"))
         elif a == "no" or "n":
             break
+    file_exists = os.path.exists(f"{n}.txt")
+    if file_exists:
+        print("A file with this name already exits. Please choose another name. \n")
+    else:
+        with open(f"{n}.txt", "a", encoding="utf-8") as f:
+            f.write(cn+"\n")
+            f.writelines(i)
 
-    with open(f"{n}.txt", "a", encoding="utf-8") as f:
-        f.write(cn+"\n")
-        f.writelines(i)
+def list_r():
+    n = input("What is the name of your wishlist? ")
+    with open(f"{n}.txt", "r", encoding="utf-8") as f:
+        print(f.readline())
+        print("Wishlist")
+        for i in f:
+            print(i.strip())
+
+"""def list_n():
+    a = input("Would you like to add names or read the naughty list.").lower()
+    cn = input("What names do yo want to add? ")
+    if a == "add" or a == "add names":
+        with open("kolbarn.txt", "a", encoding="utf-8") as f:
+            f.write("kolbarn.txt")
+            f.writelines(cn+"\n")
+    elif a"""
 
 print("""Santa has gotten sick and needs help with his work so he can take time off an recover in time for Christmas. 
 You have been tasked with creating and reading the wish lists of children.""")
@@ -25,8 +47,13 @@ def main():
     while True:
         print("Would you like to create or read a list? ")
         print("Type 'c' to create a new file, type 'r' to read a file.")
-        a = input
+        a = input()
         if a == "c":
+            list_c()
+        elif a == "r":
+            list_r()
+        else:
+            print("Input not recognised.")
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()
